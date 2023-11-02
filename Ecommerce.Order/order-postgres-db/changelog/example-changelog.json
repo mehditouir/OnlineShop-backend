@@ -1,0 +1,28 @@
+{
+    "databaseChangeLog": [
+        {
+            "include": {"file": "tables/tables_pipe.changelog.sql"}
+        },
+        {
+            "include": {"file": "tables/tables_client.changelog.sql"}
+        },
+        {
+            "include": {"file": "columns/columns_pipe.changelog.sql"}
+        },
+        {
+            "include": {"file": "columns/columns_client.changelog.sql"}
+        },
+        {
+            "include": {"file": "constraints/constraints_pipe.changelog.sql"}
+        },
+        {
+            "include": {"file": "constraints/constraints_client.changelog.sql"}
+        },
+        {
+            "include": {"file": "data/data_pipe.changelog.sql"}
+        },
+        {
+            "include": {"file": "data/data_client.changelog.sql"}
+        }
+    ]
+ }

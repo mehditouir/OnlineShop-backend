@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  order_postgres_db:
+    extends:
+      file: ./Ecommerce.Order/docker-compose.yml
+      service: order_postgres_db
+  order_api:
+    extends:
+      file: ./Ecommerce.Order/docker-compose.yml
+      service: order_api
+
+volumes:
+  postgres-data:

@@ -1,0 +1,23 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Ecommerce.Order/.vs/
+/Ecommerce.Order/Presentation/obj/
+/Ecommerce.Order/Presentation/Api/Ecommerce.Order.Presentation.Api/bin/
+/Ecommerce.Order/Presentation/Api/Ecommerce.Order.Presentation.Api/obj/
+/Ecommerce.Order/Application/obj/
+/Ecommerce.Order/Application/Ecommerce.Order.Application/bin/
+/Ecommerce.Order/Application/Ecommerce.Order.Application/obj/
+/Ecommerce.Order/Core/obj/
+/Ecommerce.Order/Core/Ecommerce.Order.Core/bin/
+/Ecommerce.Order/Core/Ecommerce.Order.Core/obj/
+/Ecommerce.Order/Domain/obj/
+/Ecommerce.Order/Domain/Ecommerce.Order.Domain/bin/
+/Ecommerce.Order/Domain/Ecommerce.Order.Domain/obj/
+/Ecommerce.Order/Infrastructure/obj/
+/Ecommerce.Order/Infrastructure/Ecommerce.Order.Infrastructure/bin/
+/Ecommerce.Order/Infrastructure/Ecommerce.Order.Infrastructure/obj/
+/Ecommerce.Order/Persistence/obj/
+/Ecommerce.Order/Persistence/Ecommerce.Order.Persistence/bin/
+/Ecommerce.Order/Persistence/Ecommerce.Order.Persistence/obj/

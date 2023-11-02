@@ -1,0 +1,341 @@
+[2023-10-11 22:38:48] SEVERE [liquibase.changelog] ChangeSet constraints/constraints_pipe.changelog.sql::1::mehdi.touir encountered an exception.
+[2023-10-11 22:38:48] SEVERE [liquibase.integration] Migration failed for changeset constraints/constraints_pipe.changelog.sql::1::mehdi.touir:
+     Reason: liquibase.exception.DatabaseException: ERROR: foreign key constraint "fk_pipe_clientid_client_id" cannot be implemented
+  Detail: Key columns "clientid" and "id" are of incompatible types: character varying and integer. [Failed SQL: (0) ALTER TABLE pipe
+ADD CONSTRAINT fk_pipe_clientId_client_id
+FOREIGN KEY (clientId) REFERENCES client(id)]
+liquibase.exception.CommandExecutionException: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset constraints/constraints_pipe.changelog.sql::1::mehdi.touir:
+     Reason: liquibase.exception.DatabaseException: ERROR: foreign key constraint "fk_pipe_clientid_client_id" cannot be implemented
+  Detail: Key columns "clientid" and "id" are of incompatible types: character varying and integer. [Failed SQL: (0) ALTER TABLE pipe
+ADD CONSTRAINT fk_pipe_clientId_client_id
+FOREIGN KEY (clientId) REFERENCES client(id)]
+	at liquibase.command.CommandScope.execute(CommandScope.java:237)
+	at com.datical.liquibase.ext.command.InternalRollbackOnErrorCommandStep.executeCommand(Unknown Source)
+	at com.datical.liquibase.ext.command.ProUpdateCommandStep.run(Unknown Source)
+	at liquibase.command.CommandScope.execute(CommandScope.java:214)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2041)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:383)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:358)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:356)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:133)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset constraints/constraints_pipe.changelog.sql::1::mehdi.touir:
+     Reason: liquibase.exception.DatabaseException: ERROR: foreign key constraint "fk_pipe_clientid_client_id" cannot be implemented
+  Detail: Key columns "clientid" and "id" are of incompatible types: character varying and integer. [Failed SQL: (0) ALTER TABLE pipe
+ADD CONSTRAINT fk_pipe_clientId_client_id
+FOREIGN KEY (clientId) REFERENCES client(id)]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:122)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$doRun$1(AbstractUpdateCommandStep.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.command.core.AbstractUpdateCommandStep.doRun(AbstractUpdateCommandStep.java:104)
+	at liquibase.command.core.AbstractUpdateCommandStep.lambda$run$0(AbstractUpdateCommandStep.java:63)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.command.core.AbstractUpdateCommandStep.run(AbstractUpdateCommandStep.java:62)
+	at liquibase.command.core.UpdateCommandStep.run(UpdateCommandStep.java:106)
+	... 25 more
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset constraints/constraints_pipe.changelog.sql::1::mehdi.touir:
+     Reason: liquibase.exception.DatabaseException: ERROR: foreign key constraint "fk_pipe_clientid_client_id" cannot be implemented
+  Detail: Key columns "clientid" and "id" are of incompatible types: character varying and integer. [Failed SQL: (0) ALTER TABLE pipe
+ADD CONSTRAINT fk_pipe_clientId_client_id
+FOREIGN KEY (clientId) REFERENCES client(id)]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:785)
+	at liquibase.changelog.visitor.UpdateVisitor.executeAcceptedChange(UpdateVisitor.java:118)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:68)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$0(ChangeLogIterator.java:110)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Scope.child(Scope.java:250)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:100)
+	at liquibase.Scope.lambda$child$0(Scope.java:184)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:183)
+	at liquibase.Scope.child(Scope.java:162)
+	at liquibase.Scope.child(Scope.java:250)
+	at liquibase.Scope.child(Scope.java:254)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:74)
+	... 38 more
+Caused by: liquibase.exception.DatabaseException: ERROR: foreign key constraint "fk_pipe_clientid_client_id" cannot be implemented
+  Detail: Key columns "clientid" and "id" are of incompatible types: character varying and integer. [Failed SQL: (0) ALTER TABLE pipe
+ADD CONSTRAINT fk_pipe_clientId_client_id
+FOREIGN KEY (clientId) REFERENCES client(id)]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:468)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:177)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1291)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1273)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	... 54 more
+Caused by: org.postgresql.util.PSQLException: ERROR: foreign key constraint "fk_pipe_clientid_client_id" cannot be implemented
+  Detail: Key columns "clientid" and "id" are of incompatible types: character varying and integer.
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:462)
+	... 59 more
+
+[2023-10-11 22:39:26] SEVERE [liquibase.integration] Validation Failed:
+     1 changesets check sum
+          columns/columns_pipe.changelog.sql::2::mehdi.touir was: 9:d5173b5aa1398f51a6e66198663de2a2 but is now: 9:dad38c39b2274021ffd7e5b3c2c16762
+liquibase.exception.CommandExecutionException: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          columns/columns_pipe.changelog.sql::2::mehdi.touir was: 9:d5173b5aa1398f51a6e66198663de2a2 but is now: 9:dad38c39b2274021ffd7e5b3c2c16762
+
+	at liquibase.command.CommandScope.execute(CommandScope.java:237)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2041)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:383)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:358)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:356)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:133)
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          columns/columns_pipe.changelog.sql::2::mehdi.touir was: 9:d5173b5aa1398f51a6e66198663de2a2 but is now: 9:dad38c39b2274021ffd7e5b3c2c16762
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:353)
+	at liquibase.command.core.helpers.DatabaseChangelogCommandStep.run(DatabaseChangelogCommandStep.java:92)
+	at liquibase.command.CommandScope.execute(CommandScope.java:214)
+	... 23 more
+
+[2023-10-11 23:46:15] SEVERE [liquibase.integration] Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.command.CommandScope.execute(CommandScope.java:237)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2041)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:383)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:358)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:356)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:133)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:105)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:95)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:72)
+	at liquibase.command.CommandScope.execute(CommandScope.java:214)
+	... 23 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:221)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:179)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:144)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:73)
+	... 26 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:218)
+	... 29 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:50)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(Unknown Source)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 30 more
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:42)
+	... 32 more
+Caused by: java.net.UnknownHostException: postgres
+	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 37 more
+
+[2023-10-11 23:46:50] SEVERE [liquibase.integration] Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.command.CommandScope.execute(CommandScope.java:237)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2041)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:383)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:358)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:356)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:133)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:105)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:95)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:72)
+	at liquibase.command.CommandScope.execute(CommandScope.java:214)
+	... 23 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:221)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:179)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:144)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:73)
+	... 26 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:218)
+	... 29 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:50)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(Unknown Source)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 30 more
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:42)
+	... 32 more
+Caused by: java.net.UnknownHostException: postgres
+	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 37 more
+
+[2023-10-11 23:49:14] SEVERE [liquibase.integration] Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+liquibase.exception.CommandExecutionException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.command.CommandScope.execute(CommandScope.java:237)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:55)
+	at liquibase.integration.commandline.CommandRunner.call(CommandRunner.java:24)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2041)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at picocli.CommandLine.execute(CommandLine.java:2170)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$2(LiquibaseCommandLine.java:383)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.lambda$execute$3(LiquibaseCommandLine.java:358)
+	at liquibase.Scope.child(Scope.java:193)
+	at liquibase.Scope.child(Scope.java:169)
+	at liquibase.integration.commandline.LiquibaseCommandLine.execute(LiquibaseCommandLine.java:356)
+	at liquibase.integration.commandline.LiquibaseCommandLine.main(LiquibaseCommandLine.java:96)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at liquibase.integration.commandline.LiquibaseLauncher.main(LiquibaseLauncher.java:133)
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:105)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.obtainDatabase(DbUrlConnectionCommandStep.java:95)
+	at liquibase.command.core.helpers.DbUrlConnectionCommandStep.run(DbUrlConnectionCommandStep.java:72)
+	at liquibase.command.CommandScope.execute(CommandScope.java:214)
+	... 23 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:221)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:179)
+	at liquibase.database.DatabaseFactory.openDatabase(DatabaseFactory.java:144)
+	at liquibase.command.core.helpers.AbstractDatabaseConnectionCommandStep.createDatabaseObject(AbstractDatabaseConnectionCommandStep.java:73)
+	... 26 more
+Caused by: liquibase.exception.DatabaseException: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:35)
+	at liquibase.database.DatabaseFactory.openConnection(DatabaseFactory.java:218)
+	... 29 more
+Caused by: liquibase.exception.DatabaseException: Connection could not be created to jdbc:postgresql://postgres:5432/wmsdb with driver org.postgresql.Driver.  The connection attempt failed.
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:50)
+	at com.datical.liquibase.ext.database.jvm.ProJdbcConnection.open(Unknown Source)
+	at liquibase.database.ConnectionServiceFactory.create(ConnectionServiceFactory.java:32)
+	... 30 more
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:354)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:263)
+	at org.postgresql.Driver.makeConnection(Driver.java:443)
+	at org.postgresql.Driver.connect(Driver.java:297)
+	at liquibase.database.jvm.JdbcConnection.open(JdbcConnection.java:42)
+	... 32 more
+Caused by: java.net.UnknownHostException: postgres
+	at java.base/sun.nio.ch.NioSocketImpl.connect(Unknown Source)
+	at java.base/java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.base/java.net.Socket.connect(Unknown Source)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:243)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:132)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:258)
+	... 37 more
+
